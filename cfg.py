@@ -1,10 +1,18 @@
 import random
 
-class Production:
+class Symbol():
+	def is_terminal(self):
+		pass
+
+class Terminal(Symbol):
+	def is_terminal(self):
+		return True
+
+class Production(Symbol):
 	def produce(self):
 		pass
 	def is_terminal(self):
-		pass
+		return False
 
 class Sentence(Production):
 	def __init__(self):
@@ -18,42 +26,28 @@ class Sentence(Production):
 		while not all([symbol.is_terminal() for symbol in self.symbols]):
 			for i in range(len(self.symbols)):
 				self.symbols[i] = self.symbols[i].produce()
-	def is_terminal(self):
-		return False
 
 class NounPhrase(Production):
 	def produce(self):
 		return Noun()
-	def is_terminal(self):
-		return False
 
 class VerbPhrase(Production):
 	def produce(self):
 		return Verb()
-	def is_terminal(self):
-		return False
 
-class Noun(Production):
+class Noun(Terminal):
 	nouns = ("dog", "I", "John")
 	def __init__(self):
 		self.word = random.choice(self.nouns)
 	def __str__(self):
 		return self.word
-	def produce(self):
-		pass
-	def is_terminal(self):
-		return True
 
-class Verb(Production):
+class Verb(Terminal):
 	verbs = ("be", "have", "go")
 	def __init__(self):
 		self.word = random.choice(self.verbs)
 	def __str__(self):
 		return self.word
-	def produce(self):
-		pass
-	def is_terminal(self):
-		return True
 
 sentence = Sentence()
 sentence.produce()
