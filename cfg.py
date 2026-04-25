@@ -39,6 +39,8 @@ class VerbPhrase(Production):
 		self.symbols.append(Verb())
 		if random.random() > 0.5:
 			self.symbols.append(AdverbPhrase())
+		if random.random() > 0.5:
+			self.symbols.append(PrepositionalPhrase())
 
 class AdjectivePhrase(Production):
 	def __init__(self):
@@ -49,6 +51,12 @@ class AdverbPhrase(Production):
 	def __init__(self):
 		self.symbols = []
 		self.symbols.append(Adverb())
+
+class PrepositionalPhrase(Production):
+	def __init__(self):
+		self.symbols = []
+		self.symbols.append(Preposition())
+		self.symbols.append(NounPhrase())
 
 # Terminals
 
@@ -71,6 +79,11 @@ class Adverb(Terminal):
 	adverbs = ("up", "then", "out", "now", "only", "just", "more", "also", "very")
 	def __init__(self):
 		self.word = random.choice(self.adverbs)
+
+class Preposition(Terminal):
+	prepositions = ("of", "in", "to", "for", "with", "on", "by", "at", "from", "as")
+	def __init__(self):
+		self.word = random.choice(self.prepositions)
 
 class Determiner(Terminal):
 	determiners = ("the", "a", "that", "this", "which", "whose", "his", "their", "her")
