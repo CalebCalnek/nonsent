@@ -13,6 +13,8 @@ class Production(Symbol):
 		symbol_string = " ".join(symbols)
 		return symbol_string
 
+# Productions
+
 class Sentence(Production):
 	def __init__(self):
 		self.symbols = [NounPhrase(), VerbPhrase()]
@@ -24,11 +26,16 @@ class Sentence(Production):
 
 class NounPhrase(Production):
 	def __init__(self):
-		self.symbols = [Noun()]
+		self.symbols = []
+		if random.random() > 0.5:
+			self.symbols.append(Determiner())
+		self.symbols.append(Noun())
 
 class VerbPhrase(Production):
 	def __init__(self):
 		self.symbols = [Verb()]
+
+# Terminals
 
 class Noun(Terminal):
 	nouns = ("dog", "I", "John")
@@ -39,6 +46,11 @@ class Verb(Terminal):
 	verbs = ("be", "have", "go")
 	def __init__(self):
 		self.word = random.choice(self.verbs)
+
+class Determiner(Terminal):
+	determiners = ("the", "a", "that", "this", "which", "whose")
+	def __init__(self):
+		self.word = random.choice(self.determiners)
 
 sentence = Sentence()
 print(sentence)
