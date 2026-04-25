@@ -35,23 +35,19 @@ class VerbPhrase(Production):
 
 class Noun(Production):
 	nouns = ("dog", "I", "John")
+	def __init__(self):
+		self.word = random.choice(self.nouns)
+	def __str__(self):
+		return self.word
 	def produce(self):
-		word = random.choice(self.nouns)
-		return Word(word)
+		pass
 	def is_terminal(self):
-		return False
+		return True
 
 class Verb(Production):
 	verbs = ("be", "have", "go")
-	def produce(self):
-		word = random.choice(self.verbs)
-		return Word(word)
-	def is_terminal(self):
-		return False
-
-class Word(Production):
-	def __init__(self, word):
-		self.word = word
+	def __init__(self):
+		self.word = random.choice(self.verbs)
 	def __str__(self):
 		return self.word
 	def produce(self):
