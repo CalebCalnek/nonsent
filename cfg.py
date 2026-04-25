@@ -38,17 +38,17 @@ class VerbPhrase(Production):
 # Terminals
 
 class Noun(Terminal):
-	nouns = ("dog", "I", "John")
+	nouns = ("dog", "i", "john", "house", "we", "you", "time", "people", "man", "day")
 	def __init__(self):
 		self.word = random.choice(self.nouns)
 
 class Verb(Terminal):
-	verbs = ("be", "have", "go")
+	verbs = ("be", "have", "go", "let", "get", "do", "take", "make", "put")
 	def __init__(self):
 		self.word = random.choice(self.verbs)
 
 class Determiner(Terminal):
-	determiners = ("the", "a", "that", "this", "which", "whose")
+	determiners = ("the", "a", "that", "this", "which", "whose", "his", "their", "her")
 	def __init__(self):
 		self.word = random.choice(self.determiners)
 
