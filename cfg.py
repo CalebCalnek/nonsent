@@ -31,25 +31,29 @@ class NounPhrase(Production):
 			self.symbols.append(Determiner())
 		if random.random() > 0.5:
 			self.symbols.append(AdjectivePhrase())
-		if random.random() > 0.5:
-			self.symbols.append(Noun())
-		else:
-			self.symbols.append(NounPhrase())
+		self.symbols.append(Noun())
 
 class VerbPhrase(Production):
 	def __init__(self):
 		self.symbols = []
 		self.symbols.append(Verb())
+		if random.random() > 0.5:
+			self.symbols.append(AdverbPhrase())
 
 class AdjectivePhrase(Production):
 	def __init__(self):
 		self.symbols = []
 		self.symbols.append(Adjective())
 
+class AdverbPhrase(Production):
+	def __init__(self):
+		self.symbols = []
+		self.symbols.append(Adverb())
+
 # Terminals
 
 class Noun(Terminal):
-	nouns = ("dog", "i", "john", "house", "we", "you", "time", "people", "man", "day")
+	nouns = ("dog", "house", "time", "people", "man", "day", "way", "year", "work", "goverment")
 	def __init__(self):
 		self.word = random.choice(self.nouns)
 
@@ -62,6 +66,11 @@ class Adjective(Terminal):
 	adjectives = ("other", "new", "good", "old", "different", "local", "great", "small")
 	def __init__(self):
 		self.word = random.choice(self.adjectives)
+
+class Adverb(Terminal):
+	adverbs = ("up", "then", "out", "now", "only", "just", "more", "also", "very")
+	def __init__(self):
+		self.word = random.choice(self.adverbs)
 
 class Determiner(Terminal):
 	determiners = ("the", "a", "that", "this", "which", "whose", "his", "their", "her")
