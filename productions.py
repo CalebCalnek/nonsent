@@ -19,8 +19,7 @@ class Sentence(Production):
 class NounPhrase(Production):
 	def __init__(self):
 		self.symbols = []
-		if random.random() > 0.5:
-			self.symbols.append(Determiner())
+		self.symbols.append(Determiner())
 		if random.random() > 0.5:
 			self.symbols.append(AdjectivePhrase())
 		self.symbols.append(NounPhrase1())

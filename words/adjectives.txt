@@ -15,7 +15,6 @@ old
 different
 great
 local
-left
 next
 small
 second
@@ -55,7 +54,6 @@ economic
 likely
 real
 hard
-wanted
 international
 special
 certain
@@ -63,7 +61,6 @@ difficult
 third
 free
 common
-involved
 short
 late
 human
@@ -108,7 +105,6 @@ modern
 fine
 nice
 standard
-built
 dark
 continued
 lower
@@ -170,3 +166,4 @@ alternative
 related
 introduced
 dear
+colorless
