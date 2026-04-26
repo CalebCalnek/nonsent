@@ -1,4 +1,5 @@
 import random
+from words import WORDS
 
 class Symbol():
 	pass
@@ -61,34 +62,28 @@ class PrepositionalPhrase(Production):
 # Terminals
 
 class Noun(Terminal):
-	nouns = ("dog", "house", "time", "people", "man", "day", "way", "year", "work", "goverment")
 	def __init__(self):
-		self.word = random.choice(self.nouns)
+		self.word = random.choice(WORDS["nouns"])
 
 class Verb(Terminal):
-	verbs = ("be", "have", "go", "let", "get", "do", "take", "make", "put")
 	def __init__(self):
-		self.word = random.choice(self.verbs)
+		self.word = random.choice(WORDS["verbs"])
 
 class Adjective(Terminal):
-	adjectives = ("other", "new", "good", "old", "different", "local", "great", "small")
 	def __init__(self):
-		self.word = random.choice(self.adjectives)
+		self.word = random.choice(WORDS["adjectives"])
 
 class Adverb(Terminal):
-	adverbs = ("up", "then", "out", "now", "only", "just", "more", "also", "very")
 	def __init__(self):
-		self.word = random.choice(self.adverbs)
+		self.word = random.choice(WORDS["adverbs"])
 
 class Preposition(Terminal):
-	prepositions = ("of", "in", "to", "for", "with", "on", "by", "at", "from", "as")
 	def __init__(self):
-		self.word = random.choice(self.prepositions)
+		self.word = random.choice(WORDS["prepositions"])
 
 class Determiner(Terminal):
-	determiners = ("the", "a", "that", "this", "which", "whose", "his", "their", "her")
 	def __init__(self):
-		self.word = random.choice(self.determiners)
+		self.word = random.choice(WORDS["determiners"])
 
 sentence = Sentence()
 print(sentence)

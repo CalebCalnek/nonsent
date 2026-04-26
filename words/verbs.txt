@@ -1,0 +1,9 @@
+be
+have
+go
+let
+get
+do
+take
+make
+put
