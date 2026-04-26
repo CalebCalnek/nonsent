@@ -32,6 +32,13 @@ class NounPhrase(Production):
 			self.symbols.append(Determiner())
 		if random.random() > 0.5:
 			self.symbols.append(AdjectivePhrase())
+		self.symbols.append(NounPhrase1())
+
+class NounPhrase1(Production):
+	def __init__(self):
+		self.symbols = []
+		if random.random() > 0.5:
+			self.symbols.append(AdjectivePhrase())
 		self.symbols.append(Noun())
 
 class VerbPhrase(Production):
