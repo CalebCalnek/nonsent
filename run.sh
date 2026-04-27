@@ -4,7 +4,11 @@ printf '\e[?1049h'
 clear
 
 while true; do
-	python cfg.py
+	if [[ $@ == "--espeak" ]]; then
+		python cfg.py | tee >(espeak-ng -v en-us+announcer -s 150)
+	else
+		python cfg.py
+	fi
 	read -rsn1 input
 	case $input in
 		c) clear ;;
@@ -14,4 +18,3 @@ while true; do
 done
 
 printf '\e[?1049l'
-
