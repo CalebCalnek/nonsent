@@ -84,7 +84,7 @@ worked
 visits
 buys
 stays
-miss
+missed
 established
 continues
 won
