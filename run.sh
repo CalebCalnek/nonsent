@@ -5,9 +5,9 @@ clear
 
 while true; do
 	if [[ $@ == "--espeak" ]]; then
-		python cfg.py | tee >(espeak-ng -v en-us+announcer -s 150)
+		python nonsent.py | tee >(espeak-ng -v en-us+announcer -s 150)
 	else
-		python cfg.py
+		python nonsent.py
 	fi
 	read -rsn1 input
 	case $input in

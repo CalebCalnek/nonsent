@@ -4,7 +4,7 @@ from productions import Sentence
 exec_count = 1
 
 if len(sys.argv) > 1 and sys.argv[1] == "--help":
-	print("usage: python cfg.py [-n exec_count]")
+	print("usage: python nonsent.py [-n exec_count]")
 	exit(1)
 
 for i in range(1, len(sys.argv)):
