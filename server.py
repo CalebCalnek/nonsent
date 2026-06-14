@@ -9,11 +9,12 @@ class Handler(SimpleHTTPRequestHandler):
 		self.send_response(200)
 		self.send_header("Content-Type", "text/plain")
 		self.end_headers()
-		sentence: str = str(Sentence())
+		sentence: str = str(Sentence()) + "\n"
 		sentence_encoded: bytes = sentence.encode()
 		self.wfile.write(sentence_encoded)
 
 if __name__ == "__main__":
 	server = HTTPServer((HOST, PORT), Handler)
+	print(f"server at {HOST}:{PORT}")
 	server.serve_forever()
 
